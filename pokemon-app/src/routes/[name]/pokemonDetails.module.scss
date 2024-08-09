@@ -5,6 +5,7 @@
 	background-color: #fff;
 	border-radius: 10px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	text-align: center; /* Center align all content inside .pokemon-details */
 }
 
 h1 {
@@ -13,12 +14,40 @@ h1 {
 	text-align: center;
 }
 
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: 0 auto 20px; /* Center the image and add margin below it */
+}
+
 p {
 	font-size: 1.2em;
 	line-height: 1.5;
 	margin-bottom: 10px;
+	text-align: center; /* Ensure any paragraphs are also centered */
 }
 
 strong {
 	color: #555;
+}
+
+.back-button-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 50px; /* Place the button 50px below the last content */
+}
+
+.back-button {
+	padding: 10px 20px;
+	font-size: 16px;
+	background-color: #3498db;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.back-button:hover {
+	background-color: #2980b9;
 }

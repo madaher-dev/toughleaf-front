@@ -16,11 +16,37 @@ body {
 	padding: 20px;
 	max-width: 800px;
 	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
 	position: relative;
 	margin-top: 50px; /* Add top margin of 50px */
+	display: flex;
+	flex-direction: column; /* Stack search bar on top of the list and legend */
+}
+
+.search {
+	width: 100%;
+	margin-bottom: 20px;
+	display: flex; /* Align input and button horizontally */
+	justify-content: flex-start;
+}
+
+input[type='text'] {
+	padding: 10px;
+	font-size: 16px;
+	width: 300px;
+	margin-right: 10px;
+}
+
+button {
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.content-wrapper {
+	display: flex;
+	justify-content: space-between; /* Keep the list and legend next to each other */
+	align-items: flex-start; /* Align to the top of the container */
+	width: 100%;
 }
 
 .pokemon-list {
@@ -143,6 +169,10 @@ body {
 		padding: 10px;
 		flex-direction: column;
 		align-items: stretch;
+	}
+
+	.content-wrapper {
+		flex-direction: column; /* Stack the list and legend vertically on smaller screens */
 	}
 
 	.type-mapping {
