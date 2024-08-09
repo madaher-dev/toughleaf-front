@@ -1,0 +1,20 @@
+services:
+  svelte-app:
+    build:
+      context: . # The current directory containing the Dockerfile
+    container_name: pokemon-container
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./pokemon-app:/app # Maps the pokemon-app directory to /app in the container
+      - /app/node_modules # Keeps node_modules on a separate volume to avoid overwriting by host
+    networks:
+      - app-network
+    environment:
+      - CHOKIDAR_USEPOLLING=true # Use polling to detect file changes (necessary in some Docker setups)
+      - NODE_ENV=development # Ensure it's running in development mode
+    command: npm run dev -- --host # Ensures SvelteKit listens on all network interfaces
+
+networks:
+  app-network:
+    driver: bridge
