@@ -1,0 +1,155 @@
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	background: linear-gradient(135deg, #f3f4f6, #f1f1f1);
+	margin: 0;
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start; /* Align items to the top */
+	height: 100vh;
+}
+
+.container {
+	background: white;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	padding: 20px;
+	max-width: 800px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	position: relative;
+	margin-top: 50px; /* Add top margin of 50px */
+}
+
+.pokemon-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	flex: 2;
+	margin-right: 20px; /* Padding between the tables */
+
+	li {
+		padding: 15px;
+		margin: 10px 0;
+		border: 1px solid #ddd;
+		border-radius: 8px;
+		transition:
+			transform 0.2s,
+			box-shadow 0.2s;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background-color: #f9f9f9;
+
+		&:hover {
+			transform: translateY(-3px);
+			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+		}
+
+		.number {
+			font-weight: bold;
+			font-size: 1.2em;
+			color: #ff6f61;
+			margin-right: 10px;
+		}
+
+		.name {
+			font-weight: bold;
+			font-size: 1.2em;
+			color: #333;
+			flex: 1; /* This will make the name take up all available space */
+			text-align: left; /* Ensure the text is left-aligned */
+		}
+
+		.type {
+			font-size: 1.5em; /* Larger size for emojis */
+			margin-left: 10px;
+			margin-right: 20px; /* Add space before the buttons */
+		}
+		.actions {
+			display: flex;
+			gap: 10px;
+
+			button {
+				background: none;
+				border: none;
+				cursor: pointer;
+				font-size: 1.2em;
+				color: #555;
+
+				&:hover {
+					color: #000;
+				}
+
+				&.delete {
+					color: #e74c3c;
+
+					&:hover {
+						color: #c0392b;
+					}
+				}
+
+				&.edit {
+					color: #3498db;
+
+					&:hover {
+						color: #2980b9;
+					}
+				}
+			}
+		}
+	}
+}
+
+.type-mapping {
+	position: sticky; /* Stick to the top of the viewport */
+	top: 20px; /* Align with the top padding */
+	padding: 15px;
+	border-radius: 8px;
+	background-color: #f1f1f1;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	max-height: calc(100vh - 70px); /* Adjust height to account for the margin */
+	overflow-y: auto; /* Scroll if content overflows */
+	flex: 1;
+
+	h3 {
+		margin-top: 0;
+		font-size: 1.2em;
+		color: #333;
+		text-align: center;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		li {
+			margin-bottom: 10px;
+			font-size: 1.1em;
+
+			span {
+				margin-right: 10px;
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+@media (max-width: 600px) {
+	.container {
+		padding: 10px;
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.type-mapping {
+		position: static;
+		margin-left: 0;
+		margin-top: 20px;
+		width: 100%;
+		max-height: none;
+	}
+}

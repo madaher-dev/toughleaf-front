@@ -8,5 +8,4 @@ export interface Pokemon {
 	species?: string;
 	type?: string;
 	notes?: string;
-	active: boolean;
 }
