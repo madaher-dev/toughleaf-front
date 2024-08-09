@@ -1,0 +1,24 @@
+.pokemon-details {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+	margin-bottom: 20px;
+	font-size: 2.5em;
+	text-align: center;
+}
+
+p {
+	font-size: 1.2em;
+	line-height: 1.5;
+	margin-bottom: 10px;
+}
+
+strong {
+	color: #555;
+}
